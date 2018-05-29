@@ -61,7 +61,7 @@ public class MobileInputManager : MonoBehaviour {
         yaw += speedH * Input.GetAxis("Mouse X");
         pitch -= speedV * Input.GetAxis("Mouse Y");
 
-        transform.eulerAngles = new Vector3(pitch, yaw, 0.0
+        transform.eulerAngles = new Vector3(pitch, yaw, 0.0f);
 
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
