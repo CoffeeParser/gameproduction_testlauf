@@ -14,6 +14,14 @@ public class MobileInputManager : MonoBehaviour {
     public Transform barrelEnd;
     public float projetileSpeed;
 
+    public float speedH = 2.0f;
+    public float speedV = 2.0f;
+
+    private float yaw = 0.0f;
+    private float pitch = 0.0f;
+
+    public float editorWalkSpeed = 2;
+
     private void Start()
     {
         cameraContainer = new GameObject("Camera Container");
@@ -40,39 +48,48 @@ public class MobileInputManager : MonoBehaviour {
         return false;
     }
 
-    public float speedH = 2.0f;
-    public float speedV = 2.0f;
+    Vector3 velocity = new Vector3();
+    Vector3 movement = new Vector3();
 
-    private float yaw = 0.0f;
-    private float pitch = 0.0f;
+    float inAirMultiplier = 0.25f;
+    float speed = 17f;
+
     private void Update()
     {
+
 #if UNITY_EDITOR
         yaw += speedH * Input.GetAxis("Mouse X");
         pitch -= speedV * Input.GetAxis("Mouse Y");
 
-        transform.eulerAngles = new Vector3(pitch, yaw, 0.0f);
+        transform.eulerAngles = new Vector3(pitch, yaw, 0.0
+
+        if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            SpawnProjectile();
+        }
 #else
         if (gyro.enabled)
         {
             transform.localRotation = gyro.attitude * rot;
         }
-#endif
-
-
-
         for (int i = 0; i < Input.touchCount; ++i)
         {
             if (Input.GetTouch(i).phase == TouchPhase.Began)
             {
-                Rigidbody rocketInstance;
-                rocketInstance = Instantiate(rocketPrefab, barrelEnd.position, barrelEnd.rotation) as Rigidbody;
-                rocketInstance.AddForce(barrelEnd.forward * projetileSpeed);
-                AudioSource s = GetComponent<AudioSource>();
-                s.Play();
+                SpawnProjectile();
             }
         }
+#endif
 
+    }
+
+    void SpawnProjectile()
+    {
+        Rigidbody rocketInstance;
+        rocketInstance = Instantiate(rocketPrefab, barrelEnd.position, barrelEnd.rotation) as Rigidbody;
+        rocketInstance.AddForce(barrelEnd.forward * projetileSpeed);
+        AudioSource s = GetComponent<AudioSource>();
+        //s.Play();
     }
 
 
