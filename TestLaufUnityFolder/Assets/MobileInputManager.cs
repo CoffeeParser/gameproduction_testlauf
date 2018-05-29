@@ -89,7 +89,7 @@ public class MobileInputManager : MonoBehaviour {
         rocketInstance = Instantiate(rocketPrefab, barrelEnd.position, barrelEnd.rotation) as Rigidbody;
         rocketInstance.AddForce(barrelEnd.forward * projetileSpeed);
         AudioSource s = GetComponent<AudioSource>();
-        //s.Play();
+        s.Play();
     }
 
 
