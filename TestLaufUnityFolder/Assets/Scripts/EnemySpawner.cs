@@ -5,14 +5,15 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour {
 
     public GameObject enemy;
-    private int enemyCount = 9;
-    public int counter = 10;
+    public int enemyCount = 0;
+    private int radiusID;
 
 	// Use this for initialization
 	void Start () {
-        for (int i = 0; i < enemyCount; i++)
+        for (int i = 0; i < enemyCount -1; i++)
         {
             Instantiate(enemy, GetRandomPosition(), transform.rotation);
+
 
         }
     }
@@ -24,7 +25,7 @@ public class EnemySpawner : MonoBehaviour {
     public Vector3 GetRandomPosition()
     {
         int range = 10;
-        Vector3 v = new Vector3(Random.Range(range, -range), 0, Random.Range(range, -range));
+        Vector3 v = new Vector3(Random.Range(range, -range), 2, Random.Range(range, -range));
         return v;
     }
 }

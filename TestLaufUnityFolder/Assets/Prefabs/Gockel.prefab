@@ -182,7 +182,7 @@ BoxCollider:
   m_GameObject: {fileID: 1659805802433486}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 3, y: 3, z: 3}
   m_Center: {x: 0, y: 0, z: 0}
@@ -197,4 +197,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0013bcc96534c55439d71961a5cf4052, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectile: {fileID: 1541172605745010, guid: 3888aaab66fc04043bb2b9142a55a9e8, type: 2}
+  radiusID: 0
+  gockelSpeed: 10
+  radius1: 10
+  radius2: 50
+  radius3: 100
+  playerPosition: {fileID: 4515528563632148, guid: 2570b2550802b7d49baff9abaae7d3ab,
+    type: 2}
+  smooth: 1

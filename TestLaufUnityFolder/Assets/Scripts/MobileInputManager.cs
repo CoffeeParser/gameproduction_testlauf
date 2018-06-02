@@ -22,6 +22,8 @@ public class MobileInputManager : MonoBehaviour {
 
     public float editorWalkSpeed = 2;
 
+    public Rigidbody rocketInstance;
+
     private void Start()
     {
         cameraContainer = new GameObject("Camera Container");
@@ -85,7 +87,7 @@ public class MobileInputManager : MonoBehaviour {
 
     void SpawnProjectile()
     {
-        Rigidbody rocketInstance;
+        
         rocketInstance = Instantiate(rocketPrefab, barrelEnd.position, barrelEnd.rotation) as Rigidbody;
         rocketInstance.AddForce(barrelEnd.forward * projetileSpeed);
         AudioSource s = GetComponent<AudioSource>();
