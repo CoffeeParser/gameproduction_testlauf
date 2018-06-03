@@ -26,6 +26,9 @@ public class MobileInputManager : MonoBehaviour {
 
     private void Start()
     {
+        MicInput.Instance = GetComponent<MicInput>();
+        MicInput.Instance.InitMic(); // start mic input recording
+
         cameraContainer = new GameObject("Camera Container");
         cameraContainer.transform.position = transform.position;
         transform.SetParent(cameraContainer.transform);
@@ -56,16 +59,19 @@ public class MobileInputManager : MonoBehaviour {
     float inAirMultiplier = 0.25f;
     float speed = 17f;
 
+    private float _miniMumDecibelToTriggerPeng = -20.0f;
+    // TODO: peng cooldown implementieren
     private void Update()
     {
 
 #if UNITY_EDITOR
+        //Debug.Log("Mic db:" + MicInput.MicLoudnessinDecibels);
         yaw += speedH * Input.GetAxis("Mouse X");
         pitch -= speedV * Input.GetAxis("Mouse Y");
 
         transform.eulerAngles = new Vector3(pitch, yaw, 0.0f);
 
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        if (Input.GetKeyDown(KeyCode.Mouse0) || MicInput.MicLoudnessinDecibels > _miniMumDecibelToTriggerPeng)
         {
             SpawnProjectile();
         }

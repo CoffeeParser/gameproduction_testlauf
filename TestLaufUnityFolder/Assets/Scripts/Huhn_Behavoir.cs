@@ -68,26 +68,26 @@ public class Huhn_Behavoir : MonoBehaviour
         if (betrag < radius1)
         {
             
-            Debug.Log("radius1: " + betrag);
+            //Debug.Log("radius1: " + betrag);
             y = 180;
         }
         // r2
         if (betrag > radius1 && betrag < radius2)
         {
             
-            Debug.Log("radius2: " + betrag);
+            //Debug.Log("radius2: " + betrag);
         }       
         // r3
         if (betrag > radius2 && betrag < radius3)
         {
 
-            Debug.Log("radius3: " + betrag);
+            //Debug.Log("radius3: " + betrag);
         }
         //r4 (out of range)
         if (betrag > radius3 )
         {
             y = 180;
-            Debug.Log("radius4: " + betrag);
+            //Debug.Log("radius4: " + betrag);
         }       
     }
 
