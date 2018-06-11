@@ -10,12 +10,15 @@ public class EnemySpawner : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+
+
         for (int i = 0; i < enemyCount -1; i++)
         {
-            Instantiate(enemy, GetRandomPosition(), transform.rotation);
-
+            var huhn = Instantiate(enemy, GetRandomPosition(), transform.rotation);
+            huhn.name += i;
 
         }
+        
     }
 	
 	// Update is called once per frame
@@ -25,7 +28,13 @@ public class EnemySpawner : MonoBehaviour {
     public Vector3 GetRandomPosition()
     {
         int range = 10;
-        Vector3 v = new Vector3(Random.Range(range, -range), 2, Random.Range(range, -range));
+        var a = Random.Range(5, 10);
+        var b = Random.Range(-5, -10);     
+
+
+        Vector3 v = new Vector3(Random.Range(a, b), 2, Random.Range(a, b));
+        
+
         return v;
     }
 }

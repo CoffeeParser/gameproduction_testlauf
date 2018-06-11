@@ -34,7 +34,7 @@ public class Huhn_Behavoir : MonoBehaviour
 
         targetRotation = transform.rotation;
 
-        timeForDirection = gockelSpeed / 4;
+        timeForDirection = 10;
         /*
         radiusID = Random.Range(1,3);
 
@@ -52,24 +52,47 @@ public class Huhn_Behavoir : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        transform.RotateAround(playerPosition.position, Vector3.up, gockelSpeed*Time.deltaTime);
 
-        GetNewDirection();
-        SetGockelToPosition();
+        
+
+
+        //GetNewDirection();
+        //SetGockelToPosition();
+
+    }
+    void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawSphere(transform.position, 1);
     }
 
     void SetGockelToPosition()
     {
         GockelPos = transform.position;
-        PlayerToGockelRange = playerPosition.position - GockelPos;
+        //PlayerToGockelRange = playerPosition.position - GockelPos;
+        PlayerToGockelRange = GockelPos - playerPosition.position;
 
-        float betrag = Mathf.Sqrt(PlayerToGockelRange.x * PlayerToGockelRange.x + PlayerToGockelRange.z * PlayerToGockelRange.z);
 
+        //float betrag = Mathf.Sqrt(PlayerToGockelRange.x * PlayerToGockelRange.x + PlayerToGockelRange.z * PlayerToGockelRange.z);
+        //float betrag = Mathf.Sqrt(PlayerToGockelRange.x * PlayerToGockelRange.x + PlayerToGockelRange.z * PlayerToGockelRange.z);
+
+        //Absoluter Betrag 
+        float betrag = Vector3.Distance(GockelPos, playerPosition.position);
+
+        Debug.DrawLine(playerPosition.position, GockelPos);
+        Debug.Log(betrag);
+
+
+        
         // r1
         if (betrag < radius1)
         {
             
             //Debug.Log("radius1: " + betrag);
-            y = 180;
+            y += 180;
+           // Vector3 a = Vector3.up;
+           // transform.localRotation.ToAngleAxis(out y, out a);
         }
         // r2
         if (betrag > radius1 && betrag < radius2)
@@ -86,7 +109,7 @@ public class Huhn_Behavoir : MonoBehaviour
         //r4 (out of range)
         if (betrag > radius3 )
         {
-            y = 180;
+            y += 180;
             //Debug.Log("radius4: " + betrag);
         }       
     }
@@ -98,6 +121,8 @@ public class Huhn_Behavoir : MonoBehaviour
         
         // Warten um sich einen neue Richtung zu suchen 
         targetRotation = Quaternion.Euler(0, y, 0);
+        float betrag = Vector3.Distance(GockelPos, playerPosition.position);
+        Debug.Log(gameObject.name + " y: " + y + " radius3: "  + radius3 + " betrag:" + betrag);
         if (!beingHandled)
         {
             StartCoroutine(WaitForNewDirection());
@@ -116,6 +141,7 @@ public class Huhn_Behavoir : MonoBehaviour
 
         beingHandled = true;
         GetNewRotation();
+        //Debug.Log();
         yield return new WaitForSeconds(timeForDirection);
         beingHandled = false;
         //Debug.Log(y);
