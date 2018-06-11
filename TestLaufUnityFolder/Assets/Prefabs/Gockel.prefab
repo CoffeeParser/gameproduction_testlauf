@@ -88,7 +88,6 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
-  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
@@ -123,7 +122,6 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
-  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 240b706b6eeabf7448670e492531ea37, type: 2}
   m_StaticBatchInfo:
@@ -197,10 +195,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0013bcc96534c55439d71961a5cf4052, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gockelSpeed: 10
-  radius1: 10
-  radius2: 50
-  radius3: 100
+  gockelSpeed: 4
+  radius1: 3
+  radius2: 4
+  radius3: 5
   playerPosition: {fileID: 4515528563632148, guid: 2570b2550802b7d49baff9abaae7d3ab,
     type: 2}
   smooth: 1
