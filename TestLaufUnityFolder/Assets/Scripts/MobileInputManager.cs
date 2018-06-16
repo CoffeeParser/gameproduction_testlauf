@@ -4,25 +4,26 @@ using UnityEngine;
 
 public class MobileInputManager : MonoBehaviour {
 
-    private bool gyroEnabled;
+    public Rigidbody rocketPrefab;
+    public float projetileSpeed;
+
+    public float speedHorizontal = 2.0f;
+    public float speedVertical = 2.0f;
+    public float editorWalkSpeed = 2;
+
+    public AudioClip shootSound;
+
+    private Magazine magazine;
     private Gyroscope gyro;
 
     private GameObject cameraContainer;
     private Quaternion rot;
 
-    public Rigidbody rocketPrefab;
-    public Transform barrelEnd;
-    public float projetileSpeed;
-
-    public float speedH = 2.0f;
-    public float speedV = 2.0f;
-
     private float yaw = 0.0f;
     private float pitch = 0.0f;
 
-    public float editorWalkSpeed = 2;
-
-    public Rigidbody rocketInstance;
+    private AudioSource audioSource;
+    private float _miniMumDecibelToTriggerPeng = -20.0f;
 
     private void Start()
     {
@@ -33,15 +34,16 @@ public class MobileInputManager : MonoBehaviour {
         cameraContainer.transform.position = transform.position;
         transform.SetParent(cameraContainer.transform);
 
-        gyroEnabled = EnabledGyro();
+        magazine = GetComponent<Magazine>();
+        audioSource = GetComponent<AudioSource>();
 
+        TryEnableGyro();
     }
 
-    private bool EnabledGyro()
+    private bool TryEnableGyro()
     {
         if (SystemInfo.supportsGyroscope)
         {
-
             gyro = Input.gyro;
             gyro.enabled = true;
 
@@ -53,52 +55,47 @@ public class MobileInputManager : MonoBehaviour {
         return false;
     }
 
-    Vector3 velocity = new Vector3();
-    Vector3 movement = new Vector3();
-
-    float inAirMultiplier = 0.25f;
-    float speed = 17f;
-
-    private float _miniMumDecibelToTriggerPeng = -20.0f;
     // TODO: peng cooldown implementieren
     private void Update()
     {
 
 #if UNITY_EDITOR
         //Debug.Log("Mic db:" + MicInput.MicLoudnessinDecibels);
-        yaw += speedH * Input.GetAxis("Mouse X");
-        pitch -= speedV * Input.GetAxis("Mouse Y");
+        yaw += speedHorizontal * Input.GetAxis("Mouse X");
+        pitch -= speedVertical * Input.GetAxis("Mouse Y");
 
         transform.eulerAngles = new Vector3(pitch, yaw, 0.0f);
 
         if (Input.GetKeyDown(KeyCode.Mouse0) || MicInput.MicLoudnessinDecibels > _miniMumDecibelToTriggerPeng)
-        {
-            SpawnProjectile();
-        }
+            shoot();
+
+        if (Input.GetKeyDown(KeyCode.R))
+            magazine.ReloadWeapon();
 #else
         if (gyro.enabled)
-        {
             transform.localRotation = gyro.attitude * rot;
-        }
         for (int i = 0; i < Input.touchCount; ++i)
         {
             if (Input.GetTouch(i).phase == TouchPhase.Began)
-            {
-                SpawnProjectile();
-            }
+                shoot();
         }
 #endif
-
     }
 
-    void SpawnProjectile()
+    private void shoot()
     {
-        
-        rocketInstance = Instantiate(rocketPrefab, barrelEnd.position, barrelEnd.rotation) as Rigidbody;
-        rocketInstance.AddForce(barrelEnd.forward * projetileSpeed);
-        AudioSource s = GetComponent<AudioSource>();
-        s.Play();
+        if (magazine.BulletCount() > 0)
+        {
+            SpawnProjectile();
+            magazine.removeBullet();
+        }
     }
 
-
+    private void SpawnProjectile()
+    {
+        Rigidbody rocketInstance = Instantiate(rocketPrefab, transform.position, transform.rotation) as Rigidbody;
+        rocketInstance.AddForce(transform.forward * projetileSpeed, ForceMode.Impulse);
+        audioSource.clip = shootSound;
+        audioSource.Play();
+    }
 }

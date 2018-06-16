@@ -1,40 +1,81 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
+using UnityEngine.UI;
 
 public class EnemySpawner : MonoBehaviour {
 
     public GameObject enemy;
     public int enemyCount = 0;
+    public float maxRange;
+    public float minRange;
     private int radiusID;
+    public Text score;
+    private AudioSource audioSource;
+    public AudioClip dyingSound;
 
 	// Use this for initialization
 	void Start () {
-
-
-        for (int i = 0; i < enemyCount -1; i++)
-        {
-            var huhn = Instantiate(enemy, GetRandomPosition(), transform.rotation);
-            huhn.name += i;
-
-        }
-        
+        audioSource = GetComponent<AudioSource>();
+        Generate();
     }
 	
-	// Update is called once per frame
-	void Update () {
-
-    }
-    public Vector3 GetRandomPosition()
+    public void Generate()
     {
-        int range = 10;
-        var a = Random.Range(5, 10);
-        var b = Random.Range(-5, -10);     
+        DestroyAll();
+        for (int i = 0; i <= enemyCount - 1; i++)
+        {
+            Instantiate(enemy, GetRandomPosition(i * System.DateTime.Now.Millisecond), Quaternion.identity, transform);
+        }
+    }
 
+    public void DestroyAll()
+    {
+        foreach (Transform child in transform)
+        {
+            DestroyImmediate(child.gameObject);
+        }
+    }
 
-        Vector3 v = new Vector3(Random.Range(a, b), 2, Random.Range(a, b));
-        
+    public Vector3 GetRandomPosition(int seed = 0)
+    {
+        Random.InitState(seed);
+        float randX = Random.Range(-2, 2);
+        float randY = Random.Range(0, 2);
+        float randZ = Random.Range(-2, 2);
+        float randMagn = minRange + (Random.value * maxRange);
 
-        return v;
+        Vector3 newPos = new Vector3(randX, randY, randZ) * randMagn;
+
+        Debug.DrawRay(transform.position, newPos, Color.red, 0.5f);
+
+        return newPos;
+    }
+
+    private void OnTransformChildrenChanged()
+    {
+        score.text = transform.childCount + " Gockels left!";
+    }
+
+    public void OnGockelDied()
+    {
+        audioSource.clip = dyingSound;
+        audioSource.Play();
+    }
+}
+
+[CustomEditor(typeof(EnemySpawner))]
+public class EnemySpawnerInspector : Editor
+{
+    public override void OnInspectorGUI()
+    {
+        DrawDefaultInspector();
+
+        EnemySpawner myScript = (EnemySpawner)target;
+        if (GUILayout.Button("Generate"))
+        {
+            myScript.Generate();
+        }
     }
 }
