@@ -1,0 +1,148 @@
+fileFormatVersion: 2
+guid: 2337c56d4b6543c4e8e81ef67e21d6ac
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Armature
+    100002: body1.l
+    100004: body2.l
+    100006: Bone.004
+    100008: Bone.004_end
+    100010: Camera
+    100012: head.l
+    100014: Huhn
+    100016: //RootNode
+    100018: Lamp
+    100020: leg1.l
+    100022: leg1.l.001
+    100024: leg2.l
+    100026: leg2.l.001
+    100028: leg2.l.001_end
+    100030: leg2.l_end
+    100032: neck.l
+    100034: wing1.l
+    100036: wing1.r
+    100038: wing2.l
+    100040: wing2.l_end
+    100042: wing2.r
+    100044: wing2.r_end
+    100046: wing3.l
+    100048: wing3.l_end
+    100050: wing3.r
+    100052: wing3.r_end
+    400000: Armature
+    400002: body1.l
+    400004: body2.l
+    400006: Bone.004
+    400008: Bone.004_end
+    400010: Camera
+    400012: head.l
+    400014: Huhn
+    400016: //RootNode
+    400018: Lamp
+    400020: leg1.l
+    400022: leg1.l.001
+    400024: leg2.l
+    400026: leg2.l.001
+    400028: leg2.l.001_end
+    400030: leg2.l_end
+    400032: neck.l
+    400034: wing1.l
+    400036: wing1.r
+    400038: wing2.l
+    400040: wing2.l_end
+    400042: wing2.r
+    400044: wing2.r_end
+    400046: wing3.l
+    400048: wing3.l_end
+    400050: wing3.r
+    400052: wing3.r_end
+    2000000: Camera
+    2100000: Moorhuhn_Material
+    4300000: Huhn
+    7400000: Armature|ArmatureAction.001
+    9500000: //RootNode
+    10800000: Lamp
+    13700000: Huhn
+    2186277476908879412: ImportLogs
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
