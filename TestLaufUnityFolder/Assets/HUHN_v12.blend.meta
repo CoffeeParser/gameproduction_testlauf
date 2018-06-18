@@ -1,51 +1,10 @@
 fileFormatVersion: 2
-guid: 5247f71a8a4fc314491acefaa37cbec8
+guid: b4266a1cb5d7111418f2ef804a5e2c9c
+timeCreated: 1529309603
+licenseType: Free
 ModelImporter:
   serializedVersion: 22
-  fileIDToRecycleName:
-    100000: Armature
-    100002: body1_l
-    100004: body2_l
-    100006: Bone_004
-    100008: head_l
-    100010: Huhn
-    100012: //RootNode
-    100014: leg1_l
-    100016: leg1_l_001
-    100018: leg2_l
-    100020: leg2_l_001
-    100022: neck_l
-    100024: wing1_l
-    100026: wing1_r
-    100028: wing2_l
-    100030: wing2_r
-    100032: wing3_l
-    100034: wing3_r
-    400000: Armature
-    400002: body1_l
-    400004: body2_l
-    400006: Bone_004
-    400008: head_l
-    400010: Huhn
-    400012: //RootNode
-    400014: leg1_l
-    400016: leg1_l_001
-    400018: leg2_l
-    400020: leg2_l_001
-    400022: neck_l
-    400024: wing1_l
-    400026: wing1_r
-    400028: wing2_l
-    400030: wing2_r
-    400032: wing3_l
-    400034: wing3_r
-    2100000: Moorhuhn_Material
-    4300000: Huhn
-    7400000: Default Take
-    7400002: ArmatureAction_001
-    9500000: //RootNode
-    13700000: Huhn
-    2186277476908879412: ImportLogs
+  fileIDToRecycleName: {}
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -65,7 +24,6 @@ ModelImporter:
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
-    importConstraints: 0
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5

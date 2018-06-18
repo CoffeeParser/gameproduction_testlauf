@@ -43,12 +43,29 @@ public class Magazine : MonoBehaviour {
 
     public void ReloadWeapon()
     {
-        StartCoroutine(IReloadWeapon());
+        if (bullets.Count < maxBullets)
+        {
+            Debug.Log("RELOAD");
+            StartCoroutine(IReloadWeapon());
+        }
+    }
+
+    private void removeALlBullets()
+    {
+        bullets.Clear();
+
+        foreach (Transform go in bulletHolder)
+        {
+            Destroy(go.gameObject);
+        }
     }
 
     private IEnumerator IReloadWeapon()
     {
         yield return new WaitForSeconds(reloadTime);
+
+        removeALlBullets();
+
         for (int i = 0; i < maxBullets; i++)
         {
             addBullet();

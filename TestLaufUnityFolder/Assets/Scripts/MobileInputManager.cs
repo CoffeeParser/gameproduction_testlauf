@@ -59,27 +59,32 @@ public class MobileInputManager : MonoBehaviour {
     private void Update()
     {
 
-#if UNITY_EDITOR
-        //Debug.Log("Mic db:" + MicInput.MicLoudnessinDecibels);
-        yaw += speedHorizontal * Input.GetAxis("Mouse X");
-        pitch -= speedVertical * Input.GetAxis("Mouse Y");
+        if (gyro != null)
+        {
+            if (gyro.enabled && gyro != null)
+            {
+                transform.localRotation = gyro.attitude * rot;
+            }
+        }
+        else
+        {
+            yaw += speedHorizontal * Input.GetAxis("Mouse X");
+            pitch -= speedVertical * Input.GetAxis("Mouse Y");
 
-        transform.eulerAngles = new Vector3(pitch, yaw, 0.0f);
+            transform.eulerAngles = new Vector3(pitch, yaw, 0.0f);
+        }
 
-        if (Input.GetKeyDown(KeyCode.Mouse0) || MicInput.MicLoudnessinDecibels > _miniMumDecibelToTriggerPeng)
+        if (Input.touchCount > 0)
+        {
+            if (Input.GetTouch(0).phase == TouchPhase.Began)
+                shoot();
+        } else if (Input.GetKeyDown(KeyCode.Mouse0) || MicInput.MicLoudnessinDecibels > _miniMumDecibelToTriggerPeng)
+        {
             shoot();
+        }
 
         if (Input.GetKeyDown(KeyCode.R))
             magazine.ReloadWeapon();
-#else
-        if (gyro.enabled)
-            transform.localRotation = gyro.attitude * rot;
-        for (int i = 0; i < Input.touchCount; ++i)
-        {
-            if (Input.GetTouch(i).phase == TouchPhase.Began)
-                shoot();
-        }
-#endif
     }
 
     private void shoot()

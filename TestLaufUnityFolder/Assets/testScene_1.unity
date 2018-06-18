@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1735507500}
-  m_IndirectSpecularColor: {r: 0.36687222, g: 0.6416444, b: 0.8761206, a: 1}
+  m_IndirectSpecularColor: {r: 0.36825883, g: 0.64181226, b: 0.87921816, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -460,7 +460,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54f987501dbb34f49b8dab6fbcea0036, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shakeDetectionThreshold: 5
+  shakeDetectionThreshold: 20
   shakePeriod: 0.5
 --- !u!1 &565932789
 GameObject:
