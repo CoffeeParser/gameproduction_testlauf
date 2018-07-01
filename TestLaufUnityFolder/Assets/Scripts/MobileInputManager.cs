@@ -24,6 +24,9 @@ public class MobileInputManager : MonoBehaviour {
 
     private AudioSource audioSource;
     public float _miniMumDecibelToTriggerPeng = -20.0f;
+    public float _pengDelaySeconds = 1.20f;
+    private float _currentDelaySeconds;
+    private bool _shotAllowed = true;
 
     private void Start()
     {
@@ -74,12 +77,25 @@ public class MobileInputManager : MonoBehaviour {
             transform.eulerAngles = new Vector3(pitch, yaw, 0.0f);
         }
 
+        if (_currentDelaySeconds < _pengDelaySeconds && !_shotAllowed)
+        {
+            Debug.Log(_currentDelaySeconds);
+            _currentDelaySeconds += Time.deltaTime;
+        }
+        else
+        {
+            
+            _shotAllowed = true;
+        }
         if (Input.touchCount > 0)
         {
             if (Input.GetTouch(0).phase == TouchPhase.Began)
                 shoot();
-        } else if (Input.GetKeyDown(KeyCode.Mouse0) || MicInput.MicLoudnessinDecibels > _miniMumDecibelToTriggerPeng)
+        } else if (Input.GetKeyDown(KeyCode.Mouse0) || MicInput.MicLoudnessinDecibels > _miniMumDecibelToTriggerPeng && _shotAllowed)
         {
+            _shotAllowed = false;
+            _currentDelaySeconds = 0.0f;
+            
             shoot();
         }
 
