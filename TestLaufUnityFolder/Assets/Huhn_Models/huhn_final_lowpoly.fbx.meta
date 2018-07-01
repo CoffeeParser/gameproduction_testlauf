@@ -1,48 +1,76 @@
 fileFormatVersion: 2
-guid: b4266a1cb5d7111418f2ef804a5e2c9c
+guid: 48e22bf4ec44a9d4fb864bbc86054fa8
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: Armature
-    100002: body1_l
-    100004: body2_l
-    100006: Bone_004
-    100008: head_l
-    100010: Huhn
-    100012: //RootNode
-    100014: leg1_l
-    100016: leg1_l_001
-    100018: leg2_l
-    100020: leg2_l_001
-    100022: neck_l
-    100024: wing1_l
-    100026: wing1_r
-    100028: wing2_l
-    100030: wing2_r
-    100032: wing3_l
-    100034: wing3_r
-    400000: Armature
-    400002: body1_l
-    400004: body2_l
-    400006: Bone_004
-    400008: head_l
-    400010: Huhn
-    400012: //RootNode
-    400014: leg1_l
-    400016: leg1_l_001
-    400018: leg2_l
-    400020: leg2_l_001
-    400022: neck_l
-    400024: wing1_l
-    400026: wing1_r
-    400028: wing2_l
-    400030: wing2_r
-    400032: wing3_l
-    400034: wing3_r
-    2100000: Moorhuhn_Material
+    100000: Arm.l
+    100002: Arm.r
+    100004: Arm1.l
+    100006: Arm1.r
+    100008: Arm2.l
+    100010: Arm2.l_end
+    100012: Arm2.r
+    100014: Arm2.r_end
+    100016: Arm3.l
+    100018: Arm3.r
+    100020: Arm4.l
+    100022: Arm4.l_end
+    100024: Arm4.r
+    100026: Arm4.r_end
+    100028: Armature
+    100030: Bauch
+    100032: Bein.l
+    100034: Bein.r
+    100036: Bein1.l
+    100038: Bein1.r
+    100040: Bein2.l
+    100042: Bein2.l_end
+    100044: Bein2.r
+    100046: Bein2.r_end
+    100048: Brust
+    100050: Hals
+    100052: Huhn
+    100054: //RootNode
+    100056: Kopf
+    100058: Kopf_end
+    400000: Arm.l
+    400002: Arm.r
+    400004: Arm1.l
+    400006: Arm1.r
+    400008: Arm2.l
+    400010: Arm2.l_end
+    400012: Arm2.r
+    400014: Arm2.r_end
+    400016: Arm3.l
+    400018: Arm3.r
+    400020: Arm4.l
+    400022: Arm4.l_end
+    400024: Arm4.r
+    400026: Arm4.r_end
+    400028: Armature
+    400030: Bauch
+    400032: Bein.l
+    400034: Bein.r
+    400036: Bein1.l
+    400038: Bein1.r
+    400040: Bein2.l
+    400042: Bein2.l_end
+    400044: Bein2.r
+    400046: Bein2.r_end
+    400048: Brust
+    400050: Hals
+    400052: Huhn
+    400054: //RootNode
+    400056: Kopf
+    400058: Kopf_end
+    2100000: Braun
+    2100002: Gelb
+    2100004: Gelb dunkel
+    2100006: "Wei\xDF"
+    2100008: Grau
+    2100010: Rot
     4300000: Huhn
-    7400000: Default Take
-    7400002: ArmatureAction_001
+    7400000: Armature|ArmatureAction.004
     9500000: //RootNode
     13700000: Huhn
     2186277476908879412: ImportLogs
