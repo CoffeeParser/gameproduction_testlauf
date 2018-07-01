@@ -119,8 +119,15 @@ public class Huhn_Behavoir : MonoBehaviour
         }       
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        Debug.Log("hitted");
+        GoDie();
+    }
+
     public void GoDie()
     {
+        Destroy(gameObject);
         SendMessageUpwards("OnGockelDied");
     }
 }

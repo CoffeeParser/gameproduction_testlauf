@@ -30,6 +30,8 @@ public class EnemySpawner : MonoBehaviour {
         }
     }
 
+
+
     public void DestroyAll()
     {
         foreach (Transform child in transform)
@@ -62,6 +64,8 @@ public class EnemySpawner : MonoBehaviour {
     {
         audioSource.clip = dyingSound;
         audioSource.Play();
+
+        //Destroy(gameObject);
     }
 }
 
