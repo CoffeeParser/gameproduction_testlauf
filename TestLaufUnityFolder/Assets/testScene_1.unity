@@ -991,6 +991,46 @@ Prefab:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 224675932484320988, guid: 46caa409d4659e74a9e34763cd822b68,
+        type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 224675932484320988, guid: 46caa409d4659e74a9e34763cd822b68,
+        type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 224846411998273344, guid: 46caa409d4659e74a9e34763cd822b68,
+        type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 224846411998273344, guid: 46caa409d4659e74a9e34763cd822b68,
+        type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 224046354111184248, guid: 46caa409d4659e74a9e34763cd822b68,
+        type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 224046354111184248, guid: 46caa409d4659e74a9e34763cd822b68,
+        type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 224046354111184248, guid: 46caa409d4659e74a9e34763cd822b68,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: -160
+      objectReference: {fileID: 0}
+    - target: {fileID: 224046354111184248, guid: 46caa409d4659e74a9e34763cd822b68,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: -160
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 46caa409d4659e74a9e34763cd822b68, type: 2}
   m_IsPrefabParent: 0

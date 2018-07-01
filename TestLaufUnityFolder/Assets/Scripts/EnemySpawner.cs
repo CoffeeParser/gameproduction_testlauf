@@ -68,7 +68,7 @@ public class EnemySpawner : MonoBehaviour {
         //Destroy(gameObject);
     }
 }
-
+#if !UNITY_ANDROID
 [CustomEditor(typeof(EnemySpawner))]
 public class EnemySpawnerInspector : Editor
 {
@@ -83,3 +83,4 @@ public class EnemySpawnerInspector : Editor
         }
     }
 }
+#endif
