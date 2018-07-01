@@ -33,9 +33,12 @@ public class ShakeDetector : MonoBehaviour
 
         timeAfterShake += Time.deltaTime;
 
-        if ((deltaAcceleration.sqrMagnitude >= shakeDetectionThreshold) && timeAfterShake < shakePeriod)
+        //Debug.Log(deltaAcceleration.sqrMagnitude);
+
+        if ((deltaAcceleration.sqrMagnitude >= shakeDetectionThreshold) && timeAfterShake > shakePeriod)
         {
             timeAfterShake = 0;
+            Debug.Log("SHAKE");
             // Perform your "shaking actions" here.
             SendMessageUpwards("ReloadWeapon");
         }
