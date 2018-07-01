@@ -23,7 +23,7 @@ public class MobileInputManager : MonoBehaviour {
     private float pitch = 0.0f;
 
     private AudioSource audioSource;
-    private float _miniMumDecibelToTriggerPeng = -20.0f;
+    public float _miniMumDecibelToTriggerPeng = -20.0f;
 
     private void Start()
     {

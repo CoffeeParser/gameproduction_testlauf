@@ -48,9 +48,9 @@ public class EnemySpawner : MonoBehaviour {
         float randZ = Random.Range(-2, 2);
         float randMagn = minRange + (Random.value * maxRange);
 
-        Vector3 newPos = new Vector3(randX, randY, randZ) * randMagn;
+        Vector3 newPos = new Vector3(randX, randY, randZ) * randMagn + transform.position;
 
-        Debug.DrawRay(transform.position, newPos, Color.red, 0.5f);
+        //Debug.DrawRay(transform.position, newPos, Color.red, 0.5f);
 
         return newPos;
     }

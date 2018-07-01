@@ -455,6 +455,11 @@ Prefab:
       propertyPath: projetileSpeed
       value: 1000
       objectReference: {fileID: 0}
+    - target: {fileID: 114035754882594772, guid: 2570b2550802b7d49baff9abaae7d3ab,
+        type: 2}
+      propertyPath: _miniMumDecibelToTriggerPeng
+      value: -18
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2570b2550802b7d49baff9abaae7d3ab, type: 2}
   m_IsPrefabParent: 0
