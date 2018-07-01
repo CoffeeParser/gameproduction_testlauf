@@ -458,7 +458,7 @@ Prefab:
     - target: {fileID: 114035754882594772, guid: 2570b2550802b7d49baff9abaae7d3ab,
         type: 2}
       propertyPath: _miniMumDecibelToTriggerPeng
-      value: -18
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2570b2550802b7d49baff9abaae7d3ab, type: 2}
@@ -619,7 +619,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54f987501dbb34f49b8dab6fbcea0036, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shakeDetectionThreshold: 20
+  shakeDetectionThreshold: 2
   shakePeriod: 0.5
 --- !u!4 &586018319 stripped
 Transform:
@@ -743,7 +743,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletHolder: {fileID: 1469800372}
   maxBullets: 7
-  reloadTime: 0.5
+  reloadTime: 0.35
   reloadSound: {fileID: 8300000, guid: ec676b3c1f8b2534b8f013008b0060d3, type: 3}
 --- !u!1 &1319300446
 GameObject:
